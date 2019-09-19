@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class DLL {
+            constructor() {
+                this.head;
+            }
+        }
+
+        class Node {
+            constructor() {
+                this.value;
+                this.prev;
+                this.next;
+            }
+        }
+
+        // Create a doubly linked list done
+        // addtoEnd
+        // removeFromEnd
+        // addToFrom
+        // removeFromFront
+        // contains
+
+        DLL.prototype.addToEnd = function (value) {
+            let newNode = new Node(value);
+            if (!this.head) {
+                this.head = newNode;
+                this.tail = newNode;
+            }
+            else {
+                let runner = this.head;
+                while (!runner.next) {
+                    runner = runner.next;
+                }
+                runner.next = newNode;
+                newNode.prev = runner;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
